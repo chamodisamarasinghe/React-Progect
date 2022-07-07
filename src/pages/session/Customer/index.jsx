@@ -13,7 +13,7 @@ class Customer extends Component {
         this.state = {
             top100Films: [
                 { label: 'Male' },
-                { label: 'Female' },
+                { label: 'Female' }
 
             ]
         }
@@ -24,11 +24,9 @@ class Customer extends Component {
         const { classes } = this.props;
         return (
             <Fragment>
-
                 <Typography variant="h4">
                     Customer Manage
                 </Typography>
-
                 <Grid container spacing={0.5}>
                     <Grid item lg={6} md={6} sm={6} xm={6} >
                         <TextField id="outlined-basic" placeHolder="Name" label="Customer name" variant="outlined" size="small"
@@ -40,7 +38,7 @@ class Customer extends Component {
                             id="combo-box-demo"
                             options={this.state.top100Films}
                             sx={{ width: 300 }}
-                            renderInput={(params) => <TextField {...params} label="Gender" />}
+                            renderInput={(params) => <TextField {...params} label="Gendr" />}
                             getOptionLabel={
                                 (option) => option.label
                             }
@@ -62,12 +60,6 @@ class Customer extends Component {
                     </Grid>
                     <Grid item lg={12} md={12} sm={12} xm={12} style={{display: 'flex'}} justifyContent="flex-end" >
                         <GDSEButton size="small" variant="contained" label="save"/>
-                        style={{width: '100%'}}
-                    </Grid>
-
-                    <Grid item lg={12} md={12} sm={12} xm={12} style={{display: 'flex'}} justifyContent="flex-end" >
-                        <GDSEButton size="small" variant="contained" label="cancel"/>
-                        style={{width: '100%'}}
                     </Grid>
                 </Grid>
             </Fragment>
@@ -75,5 +67,4 @@ class Customer extends Component {
         )
     }
 }
-
 export default withStyles(styleSheet)(Customer)
