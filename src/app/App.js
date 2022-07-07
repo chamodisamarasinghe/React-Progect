@@ -4,7 +4,11 @@ import Login from "../pages/session/Login";
 import {Routes, Route} from "react-router-dom";
 import NotFound from "../pages/session/NotFound";
 import FlexBoxLayout from "../pages/Layouts/FlexBox";
-import GridLayout from "../pages/Layouts/Gird"
+import GridLayout from "../pages/Layouts/Grid"
+import Customer from "../pages/session/Customer"
+import Item from "../pages/session/Item"
+import DashBoard from "../pages/session/DashBoard";
+
 
 function App() {
   return (
@@ -14,6 +18,9 @@ function App() {
         <Route path='flex-layout' element={<FlexBoxLayout/>}/>
         <Route path='grid-layout' element={<GridLayout/>}/>
         <Route path="*" element={<NotFound/>}/>
+        <Route path="customer" element={<Customer/>}/>
+        <Route path="item" element={<Item/>}/>
+        <Route path="dashboard" element={<DashBoard/>}/>
       </Routes>
 
   );
