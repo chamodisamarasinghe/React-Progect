@@ -11,21 +11,34 @@ class NavBar extends Component{
         disabled: PropTypes.bool,
         disableFocusRipple: PropTypes.bool,
         disableRipple: PropTypes.bool,
-        icon: PropTypes.	element | string,
+        icon: PropTypes.element | string,
         iconPosition: PropTypes.element | string,
         label: PropTypes.node,
-       // sx: PropTypes.	 func | object | bool | func | object,
+        // sx: PropTypes.func | object | bool,
         value: PropTypes.any,
-        wrapped: PropTypes.	bool
+        wrapped: PropTypes.bool,
+
     }
 
-    static defautlProps = {
+    static defaultProps = {
         disabled: false,
         disableFocusRipple: false,
         disableRipple: false,
         iconPosition: 'top',
         wrapped: false
+    }
 
+    handleButtonClick = (event) => {
+        const {onClick, disabled} = this.props;
+
+        if(disabled) return;
+
+        onClick && onClick({event});
+    }
+
+    renderChildren = (label, children) => {
+        if (label) return label;
+        if (children) return children;
     }
 
     render() {
@@ -38,15 +51,16 @@ class NavBar extends Component{
             icon,
             iconPosition,
             label,
-            sx,
+
             value,
             wrapped
         } = this.props;
 
         return (
             <Tab
-                name="navbar"
+                // name="navbar"
                // open={open}
+                children={children}
                 classes={classes}
                 disabled={disabled}
                 disableFocusRipple={disableFocusRipple}
@@ -54,9 +68,9 @@ class NavBar extends Component{
                 icon={icon}
                 iconPosition={iconPosition}
                 label={label}
-                sx={sx}
                 value={value}
                 wrapped={wrapped}
+                onClick={this.handleButtonClick}
             >
                 {this.renderChildren(label, children)}
             </Tab>
