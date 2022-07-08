@@ -46,7 +46,7 @@ class Item extends Component {
                 <Grid container spacing={0.5}>
                     <Grid item lg={6} md={6} sm={6} xm={6} >
                         <TextField id="outlined-basic" placeHolder="Code" label="Item Code" variant="outlined" size="small"
-                                   style={{width: '100%', top:150}} />
+                                   style={{width: '90%', top:150}} />
                     </Grid>
                     <Grid item lg={6} md={6} sm={6} xm={6}>
                         <Autocomplete
@@ -62,16 +62,16 @@ class Item extends Component {
                                 console.log(value.label + " " + value.year);
                             }}
                             size="small"
-                            style={{ width: '100%', top:150 , position:"absolute" }}
+                            style={{ width: '45%', top:150 , position:"absolute" }}
                         />
                     </Grid>
                     <Grid item lg={6} md={6} sm={6} xm={6} >
                         <TextField id="outlined-basic" placeHolder="Price" label="Price" variant="outlined" size="small"
-                                   style={{width: '100%', top:180}}/>
+                                   style={{width: '90%', top:180}}/>
                     </Grid>
                     <Grid item lg={6} md={6} sm={6} xm={6}>
                         <TextField id="outlined-basic" placeHolder="Qty" label="Qty" variant="outlined" size="small"
-                                   style={{width: '100%', top:180}}
+                                   style={{width: '90%', top:180}}
                         />
                     </Grid>
                     <Grid item lg={12} md={12} sm={12} xm={12} style={{display: 'flex', position:"absolute", top:270, left:1000, width:300,color:"success"}} justifyContent="flex-end" >
