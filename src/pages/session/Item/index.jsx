@@ -6,6 +6,8 @@ import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Autocomplete from '@mui/material/Autocomplete';
 import GDSEButton from "../../../components/common/Button"
+import {Link} from "react-router-dom";
+import NavBar from "../../../components/common/NavBar";
 
 class Item extends Component {
     constructor(props) {
@@ -26,8 +28,15 @@ class Item extends Component {
         const { classes } = this.props;
         return (
             <Fragment>
+
+                <div>
+                    <Link to="/" style={{ textDecoration:"none" ,color:'black' }}><NavBar disabled={false} disableFocusRipple={false} disableRipple={false}  iconPosition='top' label='Home' wrapped={false} /></Link>
+                    <Link to="customer" style={{ textDecoration:"none" ,color:'black' }}><NavBar disabled={false} disableFocusRipple={false} disableRipple={false} iconPosition='top' label='Customer' wrapped={false} /></Link>
+                    <Link to="item" style={{ textDecoration:"none" ,color:'black' }}><NavBar disabled={false} disableFocusRipple={false} disableRipple={false}  iconPosition='top' label='Item' wrapped={false} /></Link>
+                </div>
+
                 <Typography variant="h4">
-                    Customer Manage
+                    Item Manage
                 </Typography>
                 <Grid container spacing={0.5}>
                     <Grid item lg={6} md={6} sm={6} xm={6} >
