@@ -9,12 +9,36 @@ import GDSEButton from "../../../components/common/Button"
 import NavBar from "../../../components/common/NavBar";
 import {Link, Route} from "react-router-dom";
 import Button from "@mui/material/Button";
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 
 
+function createData(
+    name: string,
+    gender: string,
+    nic: string,
+    email: string,
+    // protein: number,
+) {
+    return { name, gender, nic, email};
+}
 
+const rows = [
+    createData('Chamodi Samarasinghe', 'Femail', '123456V', 'chamodisandunika98@gmail.com'),
+    createData('Nirasha Mdubhashini', 'Femail', '123456V', 'nirashamadhubhashini@gmail.com'),
+    createData('Milasha Thathsarani', 'Femail', '123456V', 'milashathathsarni@gmail.com'),
+    createData('Hansi Hashani', 'Femail', '123456V', 'hansihashani123@gmail.com'),
+    // createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
 
 
 class Customer extends Component {
+
 
 
 
@@ -39,6 +63,8 @@ class Customer extends Component {
         const { classes } = this.props;
         return (
             <Fragment>
+
+
 
                 <div>
                     <Link to="/" style={{position:'absolute', left:1100, textDecoration:"none" ,color:'black' }}><NavBar disabled={false} disableFocusRipple={false} disableRipple={false}  iconPosition='top' label='Home' wrapped={false} /></Link>
@@ -89,7 +115,7 @@ class Customer extends Component {
                         <Button variant="contained" color="success" style={{left:50}}>
                             Update
                         </Button>
-                        <Button variant="outlined" color="error" style={{left:100}}>
+                        <Button variant="contained" color="error" style={{left:100}}>
                             Cancel
                         </Button>
 
@@ -97,6 +123,41 @@ class Customer extends Component {
 
                     </Grid>
                 </Grid>
+
+
+
+
+                <TableContainer component={Paper} style={{position:'absolute', top:380}} >
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>Customer Name</TableCell>
+                                <TableCell align="center">Gender</TableCell>
+                                <TableCell align="center">NIC</TableCell>
+                                <TableCell align="center">Email</TableCell>
+                                {/*<TableCell align="right">Email</TableCell>*/}
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {rows.map((row) => (
+                                <TableRow
+                                    key={row.name}
+                                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                >
+                                    <TableCell component="th" scope="row">
+                                        {row.name}
+                                    </TableCell>
+                                    <TableCell align="center">{row.gender}</TableCell>
+                                    <TableCell align="center">{row.nic}</TableCell>
+                                    <TableCell align="center">{row.email}</TableCell>
+                                    {/*<TableCell align="right">{row.email}</TableCell>*/}
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+
+
 
 
 
