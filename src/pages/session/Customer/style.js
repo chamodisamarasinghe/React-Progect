@@ -7,6 +7,5 @@ export const styleSheet = {
         color:'#008000',
         font_weight:'bold'
 
-
     }
 }
