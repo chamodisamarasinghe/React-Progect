@@ -8,6 +8,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 import GDSEButton from "../../../components/common/Button"
 import NavBar from "../../../components/common/NavBar";
 import {Link, Route} from "react-router-dom";
+import Button from "@mui/material/Button";
 
 
 
@@ -82,8 +83,18 @@ class Customer extends Component {
                                    style={{width: '100%', top:180}}
                         />
                     </Grid>
-                    <Grid item lg={12} md={12} sm={12} xm={12} style={{display: 'flex', position:"absolute", top:500, left:400}} justifyContent="flex-end" >
-                        <GDSEButton size="small" variant="contained" label="save"/>
+                    <Grid item lg={12} md={12} sm={12} xm={12} style={{display: 'flex', position:"absolute", top:270, left:1000, width:300,color:"success"}} justifyContent="flex-end" >
+                        <GDSEButton size="large" variant="contained" label="save"/>
+
+                        <Button variant="contained" color="success" style={{left:50}}>
+                            Update
+                        </Button>
+                        <Button variant="outlined" color="error" style={{left:100}}>
+                            Cancel
+                        </Button>
+
+
+
                     </Grid>
                 </Grid>
 
