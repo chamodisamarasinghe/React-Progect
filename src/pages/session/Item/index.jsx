@@ -8,17 +8,18 @@ import Autocomplete from '@mui/material/Autocomplete';
 import GDSEButton from "../../../components/common/Button"
 import {Link} from "react-router-dom";
 import NavBar from "../../../components/common/NavBar";
+import Button from "@mui/material/Button";
 
 class Item extends Component {
     constructor(props) {
         super(props);
         this.state = {
             top100Films: [
-                { label: 'The Shawshank Redemption', year: 1994 },
-                { label: 'The Godfather', year: 1972 },
-                { label: 'The Godfather: Part II', year: 1974 },
-                { label: 'The Dark Knight', year: 2008 },
-                { label: '12 Angry Men', year: 1957 },
+                { label: 'Rice' },
+                { label: 'Sugar' },
+                { label: 'Lux' },
+                { label: 'Salt' },
+                { label: 'Chillie' },
             ]
         }
 
@@ -30,18 +31,22 @@ class Item extends Component {
             <Fragment>
 
                 <div>
-                    <Link to="/" style={{ textDecoration:"none" ,color:'black' }}><NavBar disabled={false} disableFocusRipple={false} disableRipple={false}  iconPosition='top' label='Home' wrapped={false} /></Link>
-                    <Link to="customer" style={{ textDecoration:"none" ,color:'black' }}><NavBar disabled={false} disableFocusRipple={false} disableRipple={false} iconPosition='top' label='Customer' wrapped={false} /></Link>
-                    <Link to="item" style={{ textDecoration:"none" ,color:'black' }}><NavBar disabled={false} disableFocusRipple={false} disableRipple={false}  iconPosition='top' label='Item' wrapped={false} /></Link>
+                    <Link to="/" style={{position:'absolute', left:1100, textDecoration:"none" ,color:'black'}}><NavBar disabled={false} disableFocusRipple={false} disableRipple={false}  iconPosition='top' label='Home' wrapped={false} /></Link>
+                    <Link to="customer" style={{position:'absolute', left:1200, textDecoration:"none" ,color:'black' }}><NavBar disabled={false} disableFocusRipple={false} disableRipple={false} iconPosition='top' label='Customer' wrapped={false} /></Link>
+                    <Link to="item" style={{position:'absolute', left:1300, textDecoration:"none" ,color:'black' }}><NavBar disabled={false} disableFocusRipple={false} disableRipple={false}  iconPosition='top' label='Item' wrapped={false} /></Link>
                 </div>
 
+
+                <div className={classes.title__container}>
                 <Typography variant="h4">
                     Item Manage
                 </Typography>
+                </div>
+
                 <Grid container spacing={0.5}>
                     <Grid item lg={6} md={6} sm={6} xm={6} >
-                        <TextField id="outlined-basic" placeHolder="Name" label="Customer name" variant="outlined" size="small"
-                                   style={{width: '100%'}} />
+                        <TextField id="outlined-basic" placeHolder="Code" label="Item Code" variant="outlined" size="small"
+                                   style={{width: '100%', top:150}} />
                     </Grid>
                     <Grid item lg={6} md={6} sm={6} xm={6}>
                         <Autocomplete
@@ -49,7 +54,7 @@ class Item extends Component {
                             id="combo-box-demo"
                             options={this.state.top100Films}
                             sx={{ width: 300 }}
-                            renderInput={(params) => <TextField {...params} label="fav movie" />}
+                            renderInput={(params) => <TextField {...params} label="Item" />}
                             getOptionLabel={
                                 (option) => option.label
                             }
@@ -57,21 +62,32 @@ class Item extends Component {
                                 console.log(value.label + " " + value.year);
                             }}
                             size="small"
-                            style={{ width: '100%' }}
+                            style={{ width: '100%', top:150 , position:"absolute" }}
                         />
                     </Grid>
                     <Grid item lg={6} md={6} sm={6} xm={6} >
-                        <TextField id="outlined-basic" placeHolder="NIC" label="NIC" variant="outlined" size="small"
-                                   style={{width: '100%'}}/>
+                        <TextField id="outlined-basic" placeHolder="Price" label="Price" variant="outlined" size="small"
+                                   style={{width: '100%', top:180}}/>
                     </Grid>
                     <Grid item lg={6} md={6} sm={6} xm={6}>
-                        <TextField id="outlined-basic" placeHolder="address" label="Outlined" variant="outlined" size="small"
-                                   style={{width: '100%'}}
+                        <TextField id="outlined-basic" placeHolder="Qty" label="Qty" variant="outlined" size="small"
+                                   style={{width: '100%', top:180}}
                         />
                     </Grid>
-                    <Grid item lg={12} md={12} sm={12} xm={12} style={{display: 'flex'}} justifyContent="flex-end" >
-                        <GDSEButton size="small" variant="contained" label="save"/>
+                    <Grid item lg={12} md={12} sm={12} xm={12} style={{display: 'flex', position:"absolute", top:270, left:1000, width:300,color:"success"}} justifyContent="flex-end" >
+                        <GDSEButton size="large" variant="contained" label="save"/>
+
+
+                        <Button variant="contained" color="success" style={{left:50}}>
+                            Update
+                        </Button>
+                        <Button variant="outlined" color="error" style={{left:100}}>
+                            Cancel
+                        </Button>
                     </Grid>
+
+
+
                 </Grid>
             </Fragment>
 
