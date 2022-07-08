@@ -17,6 +17,7 @@ class Customer extends Component {
 
 
 
+
     constructor(props) {
         super(props);
         this.state = {
@@ -53,7 +54,7 @@ class Customer extends Component {
                 <Grid container spacing={0.5}>
                     <Grid item lg={6} md={6} sm={6} xm={6} >
                         <TextField id="outlined-basic" placeHolder="Name" label="Customer name" variant="outlined" size="small"
-                                   style={{width: '100%'}} />
+                                   style={{width: '100%', top:150}} />
                     </Grid>
                     <Grid item lg={6} md={6} sm={6} xm={6}>
                         <Autocomplete
@@ -69,19 +70,19 @@ class Customer extends Component {
                                 console.log(value.label + " " + value.year);
                             }}
                             size="small"
-                            style={{ width: '100%' }}
+                            style={{ width: '100%', top:150 , position:"absolute"}}
                         />
                     </Grid>
                     <Grid item lg={6} md={6} sm={6} xm={6} >
                         <TextField id="outlined-basic" placeHolder="NIC" label="NIC" variant="outlined" size="small"
-                                   style={{width: '100%'}}/>
+                                   style={{width: '100%', top:180}}/>
                     </Grid>
                     <Grid item lg={6} md={6} sm={6} xm={6}>
                         <TextField id="outlined-basic" placeHolder="email" label="Email" variant="outlined" size="small"
-                                   style={{width: '100%'}}
+                                   style={{width: '100%', top:180}}
                         />
                     </Grid>
-                    <Grid item lg={12} md={12} sm={12} xm={12} style={{display: 'flex'}} justifyContent="flex-end" >
+                    <Grid item lg={12} md={12} sm={12} xm={12} style={{display: 'flex', position:"absolute", top:500, left:400}} justifyContent="flex-end" >
                         <GDSEButton size="small" variant="contained" label="save"/>
                     </Grid>
                 </Grid>
