@@ -8,13 +8,14 @@ import GridLayout from "../pages/Layouts/Grid"
 import DashBoard from "../pages/session/DashBoard";
 import Customer from "../pages/session/Customer"
 import Item from "../pages/session/Item"
-
+import Posts from "../../src/pages/Posts";
 
 
 function App() {
   return (
       <Routes>
        {/*<Route exact path='/' element={<HomePage/>}/>*/}
+          <Route exact path='posts' element={<Posts/>}/>
         <Route path='login' element={<Login/>}/>
         <Route path='flex-layout' element={<FlexBoxLayout/>}/>
         <Route path='grid-layout' element={<GridLayout/>}/>
